@@ -2,7 +2,7 @@
 Rene TUbiera
 M03 UF1
 21/09/2023
-Exercici 1
+Ex
 """
 
 #Tenemos que poner la nota que hemos sacado en el examen
@@ -16,3 +16,5 @@ else:
     #Calcula la nota final
     NotaFinal = (NotaExamen2 + NotaExamen1) / 2
     print("Has Aprobado con un ", NotaFinal)
+
+
