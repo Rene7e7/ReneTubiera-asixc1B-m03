@@ -1,7 +1,7 @@
 """
 Rene TUbiera
 M03 UF1
-20/09/2023
+21/09/2023
 Exercici 2 Comprovar Edat
 """
 
