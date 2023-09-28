@@ -6,7 +6,7 @@ Exercici 2 Comprovar Edat
 """
 try:
     # Programa que demana l'edat i diu si ets major d'edat.
-    edat = int(input("Quina edat tens? "))
+    edat = int(input("Quina  tens? "))
 
     # Comprova si tens més de 18 anys
     if edat >= 18:
@@ -17,3 +17,5 @@ try:
     print("Programa Finalitzat")
 except ValueError:
     print("ERROR: Valor no valid")
+
+
