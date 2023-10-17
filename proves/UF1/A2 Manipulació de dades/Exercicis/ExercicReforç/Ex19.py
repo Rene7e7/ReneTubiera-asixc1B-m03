@@ -37,7 +37,7 @@ else:
 print("preguntes correctes: ", preguntes_correctes)
 print("preguntes erroneas: ", preguntas_erroneas)
 print("Nota del test:", preguntes_correctes - preguntas_erroneas)
-print()
+print("Nota sobre 10: ", (preguntes_correctes/20)*10)
 
 
 
