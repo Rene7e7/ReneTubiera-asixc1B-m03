@@ -21,6 +21,18 @@ print("VariableB después de reemplazar:", VariableB_Remplazo)
 
 
 
+"""
+# Crear 2 variables A y B
+VariableA = int(input("Dime un valor para VariableA: "))
+VariableB = int(input("Dime un valor para VariableB: "))
 
+# Intercambiar los valores utilizando una variable temporal
+VariableTemp = VariableA
+VariableA = VariableB
+VariableB = VariableTemp
+
+print("VariableA después de reemplazar:", VariableA)
+print("VariableB después de reemplazar:", VariableB)
+"""
 
 
