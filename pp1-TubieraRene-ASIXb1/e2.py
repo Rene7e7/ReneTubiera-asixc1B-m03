@@ -4,6 +4,7 @@ Rene Tubiera Sadinas
 M03
 UF1
 Pp1B Prova Practica
+ASIXc1B
 Exercici nota final de la UF1 del mòdul 03 del Cicle de Grau Superior d'Administració de Sistemes Informàtics en Xarxa (CFGS ASIX)
 """
 # Demanem a l'usuari que posi les Notes de la RA1 i RA2 de cada estudiant
