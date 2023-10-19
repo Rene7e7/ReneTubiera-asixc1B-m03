@@ -24,10 +24,3 @@ QUF1_Estudiant3 = 0.30 * RA1_Estudiant3 + 0.70 * RA2_Estudiant3
 print("La Nota final de la UF1 del estudiant 1 es: ", int(QUF1_Estudiant1))
 print("La Nota final de la UF1 del estudiant 2 es: ", int(QUF1_Estudiant2))
 print("La Nota final de la UF1 del estudiant 3 es: ", int(QUF1_Estudiant3))
-
-
-
-
-
-
-
