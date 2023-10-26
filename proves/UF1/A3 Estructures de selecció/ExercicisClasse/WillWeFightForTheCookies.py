@@ -4,11 +4,11 @@ Rene Tubiera
 UF1
 M03
 """
-persones = input("Quantes persones?")
-galetes = input("Quantes galetes?")
-# Si no hi ha mas galetes per als clients
-if galetes < persones:
-    print("Lets fight!")
+num_persones, num_galetes = map(int, input().split())
+if num_galetes % num_persones == 0:
+    print("lets eat")
+else:
+    print("Lets Fight")
 
 
 
