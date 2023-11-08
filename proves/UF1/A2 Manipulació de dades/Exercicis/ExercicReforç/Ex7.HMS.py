@@ -5,6 +5,12 @@ Implementa un programa que llegeixi del teclat una quantitat de minuts i despré
 Per exemple: 1350 minuts són 22 hores i 30 minuts.
 
 """
-minutos = int(input("Dime los minutos: "))
-hores = minutos / 24
-print(hores)
+# Pedir al usuario la cantidad de minutos
+minutos = int(input("Introduce la cantidad de minutos: "))
+
+# Calcular las horas y minutos
+horas = minutos // 60
+minutos_restantes = minutos % 60
+
+# Mostrar el resultado
+print(f"{minutos} minutos son {horas} horas y {minutos_restantes} minutos.")
