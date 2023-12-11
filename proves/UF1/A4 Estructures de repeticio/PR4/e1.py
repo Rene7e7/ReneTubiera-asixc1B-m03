@@ -11,23 +11,30 @@ try:
     num_positivo = 0
     num_negativo = 0
     num_zeros = 0
-# El for pregunta 10 veces
+
+    # El bucle for pide al usuario que ingrese 10 números enteros
     for i in range(10):
         num_sencers = int(input("Digam numero Sencer: "))
-# Str encadena en fila
+
+        # Convierte el número entero a cadena para contar los dígitos
         num_string = str(num_sencers)
-# Cuenta los numeros y ceros de la cadena
+
+        # Cuenta los ceros en la cadena
         num_zeros += num_string.count('0')
-# Contar positivos y negativos
+
+        # Cuenta positivos, negativos y ceros
         if num_sencers > 0:
             num_positivo += 1
         elif num_sencers == 0:
-            num_zeros +=0
+            num_zeros += 1
         else:
-            num_negativo +=1
-    print("Positivos:",num_positivo)
-# El print negativos resta los num_zeros por que cuenta como ceros
-    print("Negativos:",num_negativo)
-    print("Ceros:",num_zeros)
-except:
-    print("ValueError")
+            num_negativo += 1
+
+    # Imprime la cantidad de positivos, negativos y ceros
+    print("Positivos:", num_positivo)
+    print("Negativos:", num_negativo)
+    print("Ceros:", num_zeros)
+
+except ValueError:
+    # Captura el error ValueError que puede ocurrir si la entrada no es un número entero
+    print("Error: Debes ingresar un número entero.")

@@ -11,8 +11,6 @@ clave = input("Dime la clave:")
 while clave != PIN and intents != 3 and clave != EASTER_EGG:
     print("Clave incorrecta!!!")
     intents = intents - 1
-if
-
-
-print("Bienvenido!!!")
+if clave == EASTER_EGG:
+   print("Bienvenido!!!")
 print("Programa terminado")

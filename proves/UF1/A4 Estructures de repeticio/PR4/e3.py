@@ -6,17 +6,30 @@ e3. Programa que mostra per pantalla la suma de tots els nombres senars i de tot
  Ex: 	si el límit és 31 sumaParells 240 i sumaSenars 225
 si el límit és 54 sumaParells 702 i sumaSenars 729
 """
-# Hecho por los dos
+# Inicialización de variables para la suma de números pares e impares
 parell = 0
 imparell = 0
+
 try:
-    num = int(input("Dime numero de limite: "))
-# El par va desde 0 saltando de 2 en 2 y sumando entre ellos
-    for i in range(0, num+1, 2):
+    # Solicita al usuario que ingrese el límite superior
+    num = int(input("Dime número límite: "))
+
+    # Bucle para la suma de números pares (comienza desde 0, salta de 2 en 2)
+    for i in range(0, num + 1, 2):
         parell += i
-# El impar lo mismo pero comenzando desde el 1
-    for j in range(1,num+1,2):
+
+    # Bucle para la suma de números impares (comienza desde 1, salta de 2 en 2)
+    for j in range(1, num + 1, 2):
         imparell += j
-    print("Si el limit és", num, "sumaParells es ", parell, " i sumaSenar és ", imparell )
-except:
-    print("Error")
+
+    # Imprime el resultado
+    print("Si el límite es", num, "sumaParells es", parell, "y sumaSenar es", imparell)
+
+except ValueError:
+    # Captura el error si la entrada no es un número entero
+    print("Error: Debes ingresar un número entero.")
+
+except Exception as e:
+    # Captura cualquier otro tipo de error e imprime un mensaje general de error
+    print("Error:", e)
+
