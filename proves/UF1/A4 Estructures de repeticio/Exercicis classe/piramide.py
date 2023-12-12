@@ -1,8 +1,3 @@
-try:
-    numero = int(input("Dime numero: "))
-    for i in range(0, numero):
-        i+=1
-        print('# ' * i)
-except ValueError:
-    print("Error")
-
+numero_altura = int(input("Dime numero de altura para la N"))
+for i in range(1,numero_altura +1):
+    print("#" * i)
