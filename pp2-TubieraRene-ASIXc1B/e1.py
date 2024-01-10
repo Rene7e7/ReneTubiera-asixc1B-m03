@@ -7,6 +7,22 @@ UF1 A4 Prova Practica 2
 
 try:
     # Demana a l'usuari un numero
+    numero = abs(int(input("Digam un numero: ")))
+    numero_original = numero
+    cont = 1
+    while numero // 10 != 0:
+        numero = numero // 10
+        cont = cont+1
+
+    print(f"El Numero {numero} te {cont} digits")
+# Ens sortira un missatge si l'usuari no psa un numero
+except ValueError:
+    print("No es un numero")
+
+'''
+
+try:
+    # Demana a l'usuari un numero
     numero = int(input("Digam un numero: "))
     # Variable que fa un range al 0 al 9
     digits = range(0,9)
@@ -22,3 +38,5 @@ try:
 # Ens sortira un missatge si l'usuari no psa un numero
 except ValueError:
     print("No es un numero")
+    
+'''

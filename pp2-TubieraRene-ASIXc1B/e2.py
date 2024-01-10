@@ -4,6 +4,28 @@ M03
 UF1 A4 Prova Practica 2
 14/12/23
 '''
+
+try:
+    # Demana una frase
+    frase = input("Digam un nombre: ")
+
+    # Demana una lletra
+    lletra = input("Digam una lletra: ")
+
+    # contador per la quantitat de lletres
+    cont_lletres = 0
+
+    if len(lletra) == 1 and len(frase)>0:
+        for i in frase:
+            if i == lletra:
+                cont_lletres = cont_lletres +1
+
+        print(f"La frase {frase} te {cont_lletres} lletres {lletra}")
+    else:
+        print("Error: un caracter només i una frase:")
+except ValueError:
+    print("Error")
+'''
 try:
     # Demana una frase
     frase = input("Digam un nombre: ")
@@ -30,3 +52,4 @@ try:
     print(f"La frase {frase} te {quantitat_de_digits} lletres {lletra}")
 except ValueError:
     print("Error")
+'''
