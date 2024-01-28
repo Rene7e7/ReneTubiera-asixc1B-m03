@@ -1,3 +1,10 @@
+'''
+e9.py
+Escriu un programa que donat dos números entrats per teclat, base i exponent (tots dos enters), tregui per pantalla el resultat de la potència. No pots fer servir l'operador de potència ni la  funció “pow” del mòdul “math”.
+Nota: si l’usuari entra un exponent negatiu, el programa el rebutjarà i el tornarà a demanar fins que sigui positiu o zero.
+
+'''
+
 try:
     # Pedir al usuario que ingrese la base y el exponente
     base = int(input("Introduce la base (número entero): "))
@@ -12,7 +19,7 @@ try:
     resultado = 1
 
     # Calcular la potencia utilizando un bucle for
-    for _ in range(exponente):
+    for i in range(exponente):
         resultado *= base
 
     # Mostrar el resultado

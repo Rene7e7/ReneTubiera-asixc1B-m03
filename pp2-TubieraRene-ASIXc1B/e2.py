@@ -52,4 +52,34 @@ try:
     print(f"La frase {frase} te {quantitat_de_digits} lletres {lletra}")
 except ValueError:
     print("Error")
+
+
+'''
+try:
+    # Demana una frase
+    frase = input("Digam un nombre: ")
+
+    # Demana una lletra
+    lletra = input("Digam una lletra: ")
+
+    # contador per la quantitat de lletres
+    quantitat_de_lletres = 0
+
+    # Separa la frase
+    llista_lletres = list(frase)
+
+    # si lletra esta en el rang de la llista de lletra
+    lletres = []
+    for lletra_frase in llista_lletres:
+        # Si la lletra esta en la llista_lletra
+        if lletra_frase.lower() == lletra.lower():
+            # suma 1 si la lletra está en la frase
+            quantitat_de_lletres += 1
+            lletres.append(lletra_frase)
+
+    print(f"La frase '{frase}' té {quantitat_de_lletres} lletres '{lletra}'")
+except ValueError:
+    print("Error")
+
+'''
 '''

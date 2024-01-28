@@ -38,3 +38,6 @@ try:
 
 except ValueError:
     print("Debe ingresar un número entero.")
+
+
+

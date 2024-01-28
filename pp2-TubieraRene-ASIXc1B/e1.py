@@ -38,5 +38,28 @@ try:
 # Ens sortira un missatge si l'usuari no psa un numero
 except ValueError:
     print("No es un numero")
+
+'''
+try:
+    # Demana a l'usuari un numero
+    numero = int(input("Digam un numero: "))
+    # Variable que fa un range del 0 al 9
+    digits = range(0, 10)
+    # Variable per la quantitat de digits que té el numero
+    quantitat_digits = 0
+
+    # mentre que el numero no sigui menor que 0
+    while numero > 0:
+        # Si el ultim digit del numero està dins de la llista digits
+        ultim_digit = numero % 10
+        if ultim_digit in digits:
+            quantitat_digits += 1
+        # Elimina l'últim dígit del número
+        numero = numero // 10
+
+    print(f"El numero té {quantitat_digits} digits amb digits entre 0 i 9.")
+# Ens sortirà un missatge
+
+'''
     
 '''
