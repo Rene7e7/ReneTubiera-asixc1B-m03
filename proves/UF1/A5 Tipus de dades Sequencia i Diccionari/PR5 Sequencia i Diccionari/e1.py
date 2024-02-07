@@ -54,8 +54,8 @@ mediana_2022 = suma_2022 / len(temperaturas_2022)
 
 print("Año 2022 ")
 print(f"Maximo: {maximo_2022:.2f} ")
-print(f"Maximo: {minimo_2022:.2f} ")
-print(f"Maximo: {mediana_2022:.2f} ")
+print(f"Minimo: {minimo_2022:.2f} ")
+print(f"Mediana: {mediana_2022:.2f} ")
 
 
 

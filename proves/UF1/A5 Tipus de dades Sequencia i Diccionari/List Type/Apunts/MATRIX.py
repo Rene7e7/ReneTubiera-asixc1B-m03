@@ -5,7 +5,7 @@ for fila in range(MIDA):
        if fila < columna:
            matrix[fila][columna] = 0
        elif fila > columna:
-           matrix[fila][columna] = 2
+           matrix[fila][columna] = 0
        else:
            matrix[fila][columna] = 1
 for fila in matrix:
