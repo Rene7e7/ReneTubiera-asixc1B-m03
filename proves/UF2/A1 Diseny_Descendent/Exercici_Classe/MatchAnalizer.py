@@ -1,0 +1,45 @@
+'''
+Rene Tubiera Sadinas
+UF2
+A1
+Volem fer un programa que analitzi els resultats d'un partit de bàsquet. Hem de tenir en compte que en un partit de bàsquet es poden fer 1, 2 o 3 punts.
+
+Donat els diferents resultats analitza que està passant.
+
+L'usuari introduirà primer el nom dels dos equips i després el resultat actual
+'''
+# Obtenir els noms dels equips
+nom_equips = input()
+
+# diferents resultats
+resultats = int(input())
+
+# region Equip
+def equip():
+    equip_local = input()
+    equip_visitant = input()
+# endregion
+# region puntuacio
+def puntuacio_partit():
+    puntuacio_local = []
+    puntuacio_visitant = []
+    Punts = []
+    while Punts != "-1":
+        puntuacio = int(input())
+        Punts.append(puntuacio[1])
+# endregion
+# region Resultat
+def resulta():
+    pass
+# endregion
+# region Guanyador
+def guanyador():
+    pass
+# endregion
+
+# region Funcions
+equip()
+resulta()
+guanyador()
+puntuacio_partit()
+
