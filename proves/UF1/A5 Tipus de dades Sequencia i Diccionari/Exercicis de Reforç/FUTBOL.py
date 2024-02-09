@@ -11,7 +11,7 @@ equips = []
 resultats = []
 
 # Bucle para gestionar els resultats de la travessa
-for jornada in range(1, 16):
+for jornada in range(1, 2):
     print(f"\nJornada {jornada}:")
 
     # Inicializar listas para la jornada actual
@@ -19,7 +19,7 @@ for jornada in range(1, 16):
     resultats_jornada = []
 
     # Bucle para demanar noms dels equips i resultats de cada partit
-    for partit in range(1, 16):
+    for partit in range(1, 2):
         equip_local = input(f"Nom de l'equip local per al partit {partit}: ")
         equip_visitant = input(f"Nom de l'equip visitant per al partit {partit}: ")
 
@@ -38,7 +38,7 @@ for jornada in range(1, 16):
     resultats.append(resultats_jornada)
 
 # Imprimir la travessa de la temporada
-for jornada in range(1, 16):
+for jornada in range(1, 2):
     print(f"\nJornada {jornada}:")
     index_inicio = (jornada - 1) * 30
     index_fin = jornada * 30
