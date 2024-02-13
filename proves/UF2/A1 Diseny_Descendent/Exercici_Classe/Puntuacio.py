@@ -30,7 +30,7 @@ def analyze_game():
             elif score2 - team2_score == 3:
                 print(f"Triple of {team2}")
             else:
-                print(f"Error")
+                print(f"Score of {score2 - team2_score} points by {team2}")
 
             team2_score = score2
 
