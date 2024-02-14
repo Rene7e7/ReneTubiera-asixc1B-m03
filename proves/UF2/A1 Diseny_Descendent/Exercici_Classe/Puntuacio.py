@@ -44,10 +44,11 @@ def analyze_game():
 
 analyze_game()
 '''
-
 def equips():
-    equipo1 = input()
-    equipo2 = input()
+    equipo1 = input("Enter the name of team 1: ")
+    equipo2 = input("Enter the name of team 2: ")
+    return equipo1, equipo2
+
 def puntuacio():
     puntuacio_equipo1 = 0
     puntuacio_equipo2 = 0
@@ -55,12 +56,39 @@ def puntuacio():
         score = input("Enter the current score (or -1 to end): ")
         if score == "-1":
             break
+        # Assuming score is a string in the format 'team1:team2'
+        score1, score2 = map(int, score.split(':'))
+        if score1 > puntuacio_equipo1:
+            if score1 - puntuacio_equipo1 == 1:
+                print(f"Free kick of {equipo1}")
+            elif score1 - puntuacio_equipo1 == 2:
+                print(f"Basket of {equipo1}")
+            elif score1 - puntuacio_equipo1 == 3:
+                print(f"Triple of {equipo1}")
+            else:
+                print(f"Score of {score1 - puntuacio_equipo1} points by {equipo1}")
+            puntuacio_equipo1 = score1
+        elif score2 > puntuacio_equipo2:
+            if score2 - puntuacio_equipo2 == 1:
+                print(f"Free kick of {equipo2}")
+            elif score2 - puntuacio_equipo2 == 2:
+                print(f"Basket of {equipo2}")
+            elif score2 - puntuacio_equipo2 == 3:
+                print(f"Triple of {equipo2}")
+            else:
+                print(f"Score of {score2 - puntuacio_equipo2} points by {equipo2}")
+            puntuacio_equipo2 = score2
+    return puntuacio_equipo1, puntuacio_equipo2
 
+def guanyador(puntuacio_equipo1, puntuacio_equipo2, equipo1, equipo2):
+    if puntuacio_equipo1 > puntuacio_equipo2:
+        print(f"{equipo1} wins")
+    elif puntuacio_equipo2 > puntuacio_equipo1:
+        print(f"{equipo2} wins")
+    else:
+        print("The game is a draw")
 
+equipo1, equipo2 = equips()
+puntuacio_equipo1, puntuacio_equipo2 = puntuacio()
+guanyador(puntuacio_equipo1, puntuacio_equipo2, equipo1, equipo2)
 
-def resultat():
-    pass
-def guanyador():
-    pass
-
-equips()
