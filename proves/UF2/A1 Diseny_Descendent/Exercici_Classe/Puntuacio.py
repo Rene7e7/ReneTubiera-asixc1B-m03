@@ -1,3 +1,4 @@
+'''
 def analyze_game():
     team1 = input("Enter the name of the first team: ")
     team2 = input("Enter the name of the second team: ")
@@ -42,3 +43,24 @@ def analyze_game():
         print("The game is a draw")
 
 analyze_game()
+'''
+
+def equips():
+    equipo1 = input()
+    equipo2 = input()
+def puntuacio():
+    puntuacio_equipo1 = 0
+    puntuacio_equipo2 = 0
+    while True:
+        score = input("Enter the current score (or -1 to end): ")
+        if score == "-1":
+            break
+
+
+
+def resultat():
+    pass
+def guanyador():
+    pass
+
+equips()
