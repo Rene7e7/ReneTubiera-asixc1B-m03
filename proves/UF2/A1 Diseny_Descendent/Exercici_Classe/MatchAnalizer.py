@@ -52,3 +52,4 @@ equipo1, equipo2 = equips()
 puntuacio_equipo1, puntuacio_equipo2 = puntuacio(equipo1, equipo2)
 guanyador(puntuacio_equipo1, puntuacio_equipo2, equipo1, equipo2)
 # endregion
+
