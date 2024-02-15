@@ -104,6 +104,8 @@ def Comanda():
     Separat = Entrada_Terminal.split()
     Historial.append(Separat)
     return Historial  # Retrona la lista
+
+
 # endregion
 
 # region Comprovacio comanda
@@ -115,5 +117,9 @@ def Comprovacio():
 
 # endregion
 
+# region Resultat
+def Resultat(Entrada_Terminal):
+    pass
+# endregion
 Comanda()
 Comprovacio()
