@@ -98,29 +98,5 @@ Usuari = "USER@BACALAO"
 Historial = []
 # endregion
 
-# region entrada comandas
-def Comanda():
-    Entrada_Terminal = input("USER@BACALAO:~$ ")
-    Separat = Entrada_Terminal.split()
-    Historial.append(Separat)
-    return Historial  # Retrona la lista
-
-
-# endregion
-
-# region Comprovacio comanda
-def Comprovacio():
-        if Historial[0][0] in Llista_Comandes and Historial[0][1] in Llista_Opcions:
-            print("Les Comandes si existeix")
-        else:
-            print("Les Comandes no existeix")
-
-# endregion
-
-# region Resultat
-def Resultat(Entrada_Terminal):
-    pass
-# endregion
-Comanda()
-Comprovacio()
+# region Comprovació de comandes
 
