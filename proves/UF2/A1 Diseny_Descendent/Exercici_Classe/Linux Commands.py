@@ -123,3 +123,4 @@ def Resultat(Entrada_Terminal):
 # endregion
 Comanda()
 Comprovacio()
+
