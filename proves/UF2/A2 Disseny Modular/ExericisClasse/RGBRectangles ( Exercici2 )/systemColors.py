@@ -21,3 +21,9 @@ def pintar_rectangulo(color, fila, columna):
             # printa la X amb el color indicat
             print(color + 'X', end='')
     print(colors.FEND)
+
+def terminar_programa():
+    # si printa ;Q es que el programa ha acabat
+    if color == ';Q':
+        print('Programa acabat')
+        exit()
