@@ -91,41 +91,35 @@ CONSELL per a "Cavernícoles"
 Más de 400 comandos para GNU/Linux que deberías conocer
 '''
 
-llistaComandes= ["touch", "grep", "cat", "fdisk", "cmp", "dmesg", "man", "top", "htop","halt"]
-llistaopcions = ["-h", "--help", "-v", "--version"]
-Comandas = {
-    "fdisk": {
-        "-h": "fdisk is a dialog-driven program for creation and manipulation of partition tables. It understands GPT, MBR, Sun, SGI and BSD partition tables. Block devices can be divided into one or more logical disks called partitions. This division is recorded in the partition table, usually found in sector 0 of the disk. (In the BSD world one talks about `disk slices' and a `disklabel'.)",
-        "-v": "v0.1",
-        "--help": "fdisk is a dialog-driven program for creation and manipulation of partition tables. It understands GPT, MBR, Sun, SGI and BSD partition tables. Block devices can be divided into one or more logical disks called partitions. This division is recorded in the partition table, usually found in sector 0 of the disk. (In the BSD world one talks about `disk slices' and a `disklabel'.)",
-        "--version": "v0.1"
-    }
+# region variables
+Llista_Comandes= ["touch", "grep", "cat", "fdisk", "cmp", "dmesg", "man", "top", "htop","halt"]
+Llista_Opcions = ["-h", "--help", "-v", "--version"]
+Usuari = "USER@BACALAO"
+Historial = []
+# endregion
 
-}
-def comanda():
-    while True:
-        comanda = input("USER@BACALAOS:~$ ")
-        if comanda == "halt":
-            break
-        else:
-            comanda = comanda.split()
-            if comprovacioComandesOpcions(comanda[0], comanda[1]):
-                execucioComandes(comanda[0], comanda[1])
-            else:
-                print(f"{comanda[0]} needs one paramater. For instance -v or -h")
-                print(f"{comanda[0]} comand not found, User BACALAO")
+# region entrada comandas
+def Comanda():
+    Entrada_Terminal = input("USER@BACALAO:~$ ")
+    Separat = Entrada_Terminal.split()
+    Historial.append(Separat)
+    return Historial  # Retrona la lista
 
-# comprueba si la comanda y la opción introducida por el usuario son correctas
-def comprovacioComandesOpcions(comanda, opcio):
-    if comanda in llistaComandes:
-        if opcio in llistaopcions:
-            return True
+
+# endregion
+
+# region Comprovacio comanda
+def Comprovacio():
+        if Historial[0][0] in Llista_Comandes and Historial[0][1] in Llista_Opcions:
+            print("Les Comandes si existeix")
         else:
-            print(f"Value {opcio} is not valid option, User BACALAO")
-            return False
-    else:
-        return False
-# ejecuta la comanda y la opción introducida por el usuario
-def execucioComandes(comanda, opcio):
-    print(Comandas[comanda][opcio])
-comanda()
+            print("Les Comandes no existeix")
+
+# endregion
+
+# region Resultat
+def Resultat(Entrada_Terminal):
+    pass
+# endregion
+Comanda()
+Comprovacio()
