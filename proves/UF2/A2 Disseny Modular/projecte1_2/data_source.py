@@ -7,11 +7,10 @@ def get_data_from_chatgpt():
     # Asigna tu API key
     openai.api_key = "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"
 
-    # Define los parámetros
+    # Define los parámetTros
     ENGINE = "gpt-3.5-turbo-instruct"
     ANSWER_QUANTITY = 1
-    MAX_TOKENS = 2048
-
+    MAX_TOKENS = 2000
     # Pregunta 1
     question = "Què és ChatGPT?"
     print(f"Asking question: {question}")
