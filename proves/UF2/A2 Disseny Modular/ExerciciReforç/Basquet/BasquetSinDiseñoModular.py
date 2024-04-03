@@ -57,3 +57,5 @@ def impClassificacio(resultatsLliga):
 if __name__ == "__main__":
     resultatsLliga = llegirPartitsDeTeclat()
     impClassificacio(resultatsLliga)
+
+
