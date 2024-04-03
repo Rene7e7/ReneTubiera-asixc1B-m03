@@ -1,5 +1,5 @@
-from utilidades_estadisticas import menu_estadisticas
-from utilidades_cadenas import menu_cadenas
+from UtilitatsEstadistiques import menu_estadisticas
+from UtilitatsCadenes import menu_cadenas
 
 def menu_principal():
     while True:

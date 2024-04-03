@@ -1,3 +1,10 @@
+'''
+2.1 - Crazy Words
+2.2 - És una frase palindroma?
+2.3 - Xifratge de Cèsar
+2.4 - Tornar al menú anterior     # de mentres no es tria aquesta opció, haurà quedar-se en aquest menú
+'''
+
 def is_palindrome(frase):
     frase = frase.lower().replace(" ", "")
     return frase == frase[::-1]

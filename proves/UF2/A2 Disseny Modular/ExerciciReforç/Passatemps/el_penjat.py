@@ -1,3 +1,5 @@
+
+# Juego del Penjat (COMPLETADO)
 # Implementación básica del juego del Penjat en Python
 # Puedes personalizar la lista de palabras
 

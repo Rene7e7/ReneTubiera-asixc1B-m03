@@ -16,34 +16,37 @@ implementació de qualsevol dels 4 jocs
 
 '''
 from el_penjat import jugar_penjat
-from el_3_en_ratlla import jugar_tres_en_raya
+from el_3_en_ratlla import jugar_tic_tac_toe
 from Buscamines import jugar_buscamines
 from Enfonsar_la_flota import jugar_hundir_la_flota
 
-def menu_principal():
+# main.py
+def mostrar_menu():
+    print("Menú:")
+    print("1 - El 'Penjat'")
+    print("2 - El 3 en ratlla")
+    print("3 - Buscamines")
+    print("4 - Enfonsar la flota")
+    print("5 - Sortir de l'aplicació")
+
+def main():
     while True:
-        print("\nMenú principal:")
-        print("1 - El “penjat”")
-        print("2 - El 3 en ratlla")
-        print("3 - Buscamines")
-        print("4 - Enfonsar la flota")
-        print("5 - Sortir de l’aplicació")
+        mostrar_menu()
+        opcio = input("Selecciona una opció (1-5): ")
 
-        opcion = input("Selecciona una opció: ")
-
-        if opcion == "1":
+        if opcio == '1':
             jugar_penjat()
-        elif opcion == "2":
-            jugar_tres_en_raya()
-        elif opcion == "3":
+        elif opcio == '2':
+            jugar_tic_tac_toe()
+        elif opcio == '3':
             jugar_buscamines()
-        elif opcion == "4":
+        elif opcio == '4':
             jugar_hundir_la_flota()
-        elif opcion == "5":
-            print("Adéu!")
+        elif opcio == '5':
+            print("Gràcies per jugar! Fins aviat.")
             break
         else:
-            print("Opció no vàlida, si us plau, tria una opció vàlida.")
+            print("Opció no vàlida. Si us plau, selecciona una opció correcta.")
 
 if __name__ == "__main__":
-    menu_principal()
+    main()

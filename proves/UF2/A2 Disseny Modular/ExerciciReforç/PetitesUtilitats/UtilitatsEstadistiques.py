@@ -1,3 +1,11 @@
+'''
+1.1 - Calcular mitjana
+1.2 - Calcular mediana
+1.3 - Calcular desviació estàndard
+1.4 - Tornar al menú anterior   # de mentres no es tria aquesta opció, haurà quedar-se en aquest menú
+
+'''
+
 def calcular_media(datos):
     if not datos:
         raise ValueError("La lista de datos está vacía")
