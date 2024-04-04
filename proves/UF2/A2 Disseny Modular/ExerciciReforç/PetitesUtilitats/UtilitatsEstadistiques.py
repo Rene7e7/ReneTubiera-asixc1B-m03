@@ -1,9 +1,8 @@
 '''
-1.1 - Calcular mitjana
-1.2 - Calcular mediana
-1.3 - Calcular desviació estàndard
-1.4 - Tornar al menú anterior   # de mentres no es tria aquesta opció, haurà quedar-se en aquest menú
-
+Rene Tubiera Sadinas
+4/4/2024
+M03 UF2 A1 i A2 pp1B - Prova Practica 1
+ASIX1B
 '''
 
 def calcular_media(datos):
