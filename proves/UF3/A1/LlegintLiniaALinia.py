@@ -1,16 +1,15 @@
 def llegirFitxer(rutaFitxer):
     contingut = ""
     fitxerDeText = open(rutaFitxer, mode='r', encoding='utf-8')
-    linia = fitxerDeText.readlines()
-    contingut += linia
-    while linia != '':
-        linia = fitxerDeText.readline()
-        contingut += linia
-
+    linies = fitxerDeText.readlines()
     fitxerDeText.close()
-    return contingut
+    return linies
 
-# main
-rutaAlFitxer = input("Entra la ruta al fitxer: ")
-contingutDelFitxer = llegirFitxer(rutaAlFitxer)
-print(contingutDelFitxer)
+def main():
+    rutaFitxer= input("Ruta fitxer: ")
+    contingutDelFitxer = llegirFitxer(rutaFitxer)
+    print(contingutDelFitxer)
+    print(contingutDelFitxer[3])
+
+if __name__ == "__main__":
+    main()
