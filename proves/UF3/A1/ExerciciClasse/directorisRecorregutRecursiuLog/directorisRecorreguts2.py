@@ -1,11 +1,54 @@
 '''
 Modificar l'exemple Recorregut de directoris recursiu, per a controlat els possibles errors.
 
-Anotar en un fitxer *.log, els errors trobats (només) amb la data i hora del sistema.
+Anotar en un fitxer recorregut.log:
+
+ els errors trobats,
+
+qualsevol incidència
+
+el temps transcorregut (per cada execució de programa)
+
+con datatiempo del sistema.
+
+por ejemplo:
+import logging
+
+
+
+logFile = 'myapp.log'
+
+logFormat='%(asctime)s %(levelname)s %(message)s'
+
+logLevel= logging.DEBUG
+
+logMode = 'w'
+
+
+
+logging.basicConfig(level=logLevel,format=logFormat,filename=logFile,filemode=logMode)
+
+
+
+logging.debug("Debug message")
+
+logging.info("Informative message")
+
+logging.error("Error message")
+
+logging.warning('Protocol problem: %s', 'connection reset')
 
 '''
-import datetime
+import logging
 import os
+import datetime
+
+logFile = 'recorregut.log'
+logFormat='%(asctime)s %(levelname)s %(message)s'
+logLevel= logging.DEBUG
+logMode = 'at'
+
+logging.basicConfig(level=logLevel,format=logFormat,filename=logFile,filemode=logMode)
 
 def recorrer_arbol_directorios(directorio):
     try:
@@ -26,17 +69,18 @@ def recorrer_arbol_directorios(directorio):
 
 def log_error(error):
     fecha_hora = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    with open("log_error.log", mode='at', encoding='utf-8') as file:
+    with open("recorregut.log", mode='at', encoding='utf-8') as file:
         file.write(f"{fecha_hora} - {error}\n")
     print(f"Error: {error}")
     return error
 # Función principal
+# todos los errores se guardan en el archivo recorregut.log, incluso si el directlrui no existe
 def main():
     # Solicitar al usuario el directorio inicial
     directorio_inicial = input("Introduce la ruta del directorio inicial: ")
-    # Verificar si el directorio ingresado existe
+    # Verificar si el directorio ingresado existe i guardar el error en el log
     if not os.path.isdir(directorio_inicial):
-        print("El directorio especificado no existe.")
+        logging.error("El directorio especificado no existe.")
     else:
         # Llamar a la función recursiva para recorrer el árbol de directorios
         print("\nRecorrido del árbol de directorios:")
@@ -45,4 +89,11 @@ def main():
 if __name__ == "__main__":
     main()
     log_error("Error de prueba")
+    logging.info("Informative message")
+    logging.error("Error message")
+    logging.warning('Protocol problem: %s', 'connection reset')
+    logging.debug("Debug message")
+
+
+
 
