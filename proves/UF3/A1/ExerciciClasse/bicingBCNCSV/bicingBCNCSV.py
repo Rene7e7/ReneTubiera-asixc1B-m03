@@ -15,38 +15,25 @@ quantitat de línies: 4.291.777
 import pandas as pd
 
 filename = '2023_03_Marc_BicingNou_INFORMACIO.csv'
-# filename = 'bicingBCNCSV.csv'
 
 # region capacity
-def capacity():
-    dades = pd.read_csv(filename)
-    estacio_max = dades['capacity'].idxmax()
-    max_bici = dades.loc[estacio_max]
-    print("L'estacio amb mes bicicletes es: ")
-    print(max_bici)
-    estacio_min = dades['capacity'].idxmin()
-    min_bici = dades.loc[estacio_min]
-    print("L'estacio amb menys bicicletes es: ")
-    print(min_bici)
+def capacity(nomarxiu):
+    dades = pd.read_csv(nomarxiu)
+    estacio_max_bicis = dades['capacity'].idxmax()
+    max_bicis = dades.loc[estacio_max_bicis, 'capacity']
+    estacio_min_bicis = dades['capacity'].idxmin()
+    min_bicis = dades.loc[estacio_min_bicis, 'capacity']
     total_capacity = dades['capacity'].sum()
-    print("La capacitat total de la ciutat de Barcelona es: ")
-    print(total_capacity)
+    total_capacity = dades.drop_duplicates(subset='station_id')['capacity'].sum()
+    return estacio_max_bicis, estacio_min_bicis, total_capacity
 
+nomarxiu = '2023_03_Marc_BicingNou_INFORMACIO.csv'
+estacio_max_bicis, estacio_min_bicis, total_capacity = capacity(nomarxiu)
+print(f'Estació amb més bicicletes: {estacio_max_bicis}')
+print(f'Estació amb menys bicicletes: {estacio_min_bicis}')
+print(f'Capacity total de la ciutat de Barcelona: {total_capacity}')
 
-
-
+capacity('2023_03_Marc_BicingNou_INFORMACIO.csv')
 # endregion
-'''
-# region total_capacity
-def total_capacity():
-    reader = csv.DictReader(open(filename))
-    total_capacity = 0
-    for row in reader:
-        total_capacity += int(row['capacity'])
-    print("La capacitat total de la ciutat de Barcelona es: ")
-    print(total_capacity)
-# endregion
-'''
 
 
-capacity()
