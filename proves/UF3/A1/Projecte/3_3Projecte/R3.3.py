@@ -1,47 +1,48 @@
 '''
-En aquest lliurament cal aprofitar tota la feina feta fins ara, és a dir el 1r i 2n lliurament i afegir el tractament de fitxers.
-Per tant, les dades caldrà agafar-les d’un arxiu d’entrada. I la sortida, que generi el programa caldrà escriure-la en un altre arxiu de sortida. L’aplicació NO ha de tenir menú, l’execució es “desatesa” i els resultats, o estan a arxius de sortida o als de log.
-Arxiu d’entrada: 	paraules.txt
-Arxiu de sortida: 	paraules_boges.txt
-Arxiu d’errors: 	boges.log
-
-boges.log servirà per mostrar tota informació, error… relacionat amb el funcionament del programa. És a dir, informarà de quan s’ha iniciat el programa i quan ha acabat, a part dels errors / problemes trobats o qualsevol altra dada que es considera important.
-
-Aquest arxiu log, no es podrà sobreescriure, haurà d’acumular un “històric” de tota la informació de les diferents execucions del programa
+Rene i Jordi
+Aquesta versió haurà de mostrar el temps transcorregut en processar els arxius.
 
 '''
+# region Imports
+import os
 import random
-
-# Llista dels caracters especials
+import time
+# endregion
+# region Lista de caracteres especiales
 LISTA =  [".", ",", ";", ":", "?", "!"]
-
-def llegir_arxiu():
+# endregion
+# region llegir_arxiu
+def llegir_arxiu(nom_arxiu):
     try:
-        with open("paraules.txt", "r") as f:
+        with open(nom_arxiu, "r") as f:
             oracio = f.readlines()
     except FileNotFoundError:
-        with open("boges.log", "a") as f:
-            f.write(f"Fitxer/Directory no trobat: paraules.txt\n")
-        print("Fitxer/Directory no trobat: paraules.txt")
+        with open("log/boges.log", "a") as f:
+            f.write(f"Fitxer/Directory no trobat: {nom_arxiu}\n")
+        print(f"Fitxer/Directory no trobat: {nom_arxiu}")
         oracio = []
     return oracio
-
-def escriure_arxiu(llista):
-    with open("paraules_boges.txt", "w") as f:
+# endregion
+# region escriure_arxiu
+def escriure_arxiu(nom_arxiu, llista):
+    nom_sortida = nom_arxiu.replace("entrada", "sortida").replace(".txt", "_boges.txt")
+    with open(nom_sortida, "w") as f:
         for paraula in llista:
             f.write(paraula + "\n")
-
-
+# endregion
+# region escriure_log
 def escriure_log(missatge):
-    with open("boges.log", "a") as f:
+    with open("log/boges.log", "a") as f:
         f.write(missatge + "\n")
-
+# endregion
+# region dividir
 def dividir(oracio):
     paraules = []
     for linia in oracio:
         paraules += linia.split()
     return paraules
-
+# endregion
+# region identificar_paraules
 def identificar_paraules(paraules):
     paraules_desordenades = []
     for paraula in paraules:
@@ -49,7 +50,8 @@ def identificar_paraules(paraules):
         if len(paraula) > 3:
             paraules_desordenades.append(paraula)
     return paraules_desordenades
-
+# endregion
+# region identificar_paraules_especials
 def identificar_caracters_especials(paraula):
     caracters_especials = []
     for i, lletra in enumerate(paraula):
@@ -57,7 +59,8 @@ def identificar_caracters_especials(paraula):
         if not lletra.isalnum():
             caracters_especials.append((lletra, i))
     return caracters_especials
-
+# endregion
+# region aleatoritzar_parte_mitjana
 def aleatoritzar_parte_mitjana(paraula):
     caracters_especials = identificar_caracters_especials(paraula)
     part_inicial = paraula[0]
@@ -83,22 +86,46 @@ def aleatoritzar_parte_mitjana(paraula):
         return part_inicial + "".join(part_media)
     else:
         return part_inicial + "".join(part_media) + part_final
-
+# endregion
+# region junta_llista
 def juntar_llista(llista):
     return [paraula + "\n" for paraula in llista]
-
-def main():
-    oracio = llegir_arxiu()
+# endregion
+# region processar_arxiu
+def processar_arxiu(nom_arxiu):
+    start_time = time.time()
+    oracio = llegir_arxiu(nom_arxiu)
     if oracio:
         paraules = dividir(oracio)
         paraules_desordenades = identificar_paraules(paraules)
         paraules_aleatoritzades = [aleatoritzar_parte_mitjana(paraula) if paraula in paraules_desordenades else paraula for paraula in paraules]
-        escriure_arxiu(paraules_aleatoritzades)
-        escriure_log("Inici del programa")
-        escriure_log("Final del programa")
+        escriure_arxiu(nom_arxiu, paraules_aleatoritzades)
+        escriure_log(f"Processat correctament: {nom_arxiu}")
     else:
-        escriure_log("Inici del programa sense fitxer d'entrada")
-        escriure_log("Final del programa sense fitxer d'entrada")
+        escriure_log(f"Error en processar: {nom_arxiu}")
+    elapsed_time = time.time() - start_time
+    # lo que falta es mostrar el tiempo transcurrido en procesar los archivos
+    # elapsed_time lo que fa es calcular el temps que ha trigat en processar el arxiu
+    escriure_log(f"Temps transcorregut en processar {nom_arxiu}: {elapsed_time} segons")
+# endregion
+# region main
+def main():
+    directori_entrada = "./entrada"
+    directori_sortida = "./sortida"
+    directori_log = "./log"
 
+    # Comprovar si els directoris de sortida i log existeixen, si no, crear-los
+    for directori in [directori_entrada, directori_sortida, directori_log]:
+        if not os.path.exists(directori):
+            os.makedirs(directori)
+
+    # Processar tots els arxius amb extensió .txt del directori d'entrada
+    arxius_entrada = [f for f in os.listdir(directori_entrada) if f.endswith(".txt")]
+    for arxiu in arxius_entrada:
+        nom_arxiu = os.path.join(directori_entrada, arxiu)
+        processar_arxiu(nom_arxiu)
+# endregion
+# region __main__
 if __name__ == "__main__":
     main()
+# endregion

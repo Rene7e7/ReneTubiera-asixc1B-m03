@@ -1,39 +1,38 @@
 '''
-En aquest lliurament cal aprofitar tota la feina feta fins ara, és a dir el 1r i 2n lliurament i afegir el tractament de fitxers.
-Per tant, les dades caldrà agafar-les d’un arxiu d’entrada. I la sortida, que generi el programa caldrà escriure-la en un altre arxiu de sortida. L’aplicació NO ha de tenir menú, l’execució es “desatesa” i els resultats, o estan a arxius de sortida o als de log.
-Arxiu d’entrada: 	paraules.txt
-Arxiu de sortida: 	paraules_boges.txt
-Arxiu d’errors: 	boges.log
+Aquesta versió haurà de processar tots els arxius, amb extensió txt del directori d'entrada.
+Haurà de generar un fitxer de sortida per a cada un dels que trobi a l’entrada amb el mateix nom, afegint “_boges”. I evidentment, processat ;-)
+Exemple: paraules.txt → paraules_boges.txt
 
-boges.log servirà per mostrar tota informació, error… relacionat amb el funcionament del programa. És a dir, informarà de quan s’ha iniciat el programa i quan ha acabat, a part dels errors / problemes trobats o qualsevol altra dada que es considera important.
-
-Aquest arxiu log, no es podrà sobreescriure, haurà d’acumular un “històric” de tota la informació de les diferents execucions del programa
-
+Directoris de treball
+Directori d’entrada: 		./entrada
+Directori de sortida: 		./sortida
+Directori de log: 		    ./log
 '''
+import os
 import random
 
-# Llista dels caracters especials
+# Lista de caracteres especiales
 LISTA =  [".", ",", ";", ":", "?", "!"]
 
-def llegir_arxiu():
+def llegir_arxiu(nom_arxiu):
     try:
-        with open("paraules.txt", "r") as f:
+        with open(nom_arxiu, "r") as f:
             oracio = f.readlines()
     except FileNotFoundError:
-        with open("boges.log", "a") as f:
-            f.write(f"Fitxer/Directory no trobat: paraules.txt\n")
-        print("Fitxer/Directory no trobat: paraules.txt")
+        with open("log/boges.log", "a") as f:
+            f.write(f"Fitxer/Directory no trobat: {nom_arxiu}\n")
+        print(f"Fitxer/Directory no trobat: {nom_arxiu}")
         oracio = []
     return oracio
 
-def escriure_arxiu(llista):
-    with open("paraules_boges.txt", "w") as f:
+def escriure_arxiu(nom_arxiu, llista):
+    nom_sortida = nom_arxiu.replace("entrada", "sortida").replace(".txt", "_boges.txt")
+    with open(nom_sortida, "w") as f:
         for paraula in llista:
             f.write(paraula + "\n")
 
-
 def escriure_log(missatge):
-    with open("boges.log", "a") as f:
+    with open("log/boges.log", "a") as f:
         f.write(missatge + "\n")
 
 def dividir(oracio):
@@ -87,18 +86,33 @@ def aleatoritzar_parte_mitjana(paraula):
 def juntar_llista(llista):
     return [paraula + "\n" for paraula in llista]
 
-def main():
-    oracio = llegir_arxiu()
+def processar_arxiu(nom_arxiu):
+    oracio = llegir_arxiu(nom_arxiu)
     if oracio:
         paraules = dividir(oracio)
         paraules_desordenades = identificar_paraules(paraules)
         paraules_aleatoritzades = [aleatoritzar_parte_mitjana(paraula) if paraula in paraules_desordenades else paraula for paraula in paraules]
-        escriure_arxiu(paraules_aleatoritzades)
-        escriure_log("Inici del programa")
-        escriure_log("Final del programa")
+        escriure_arxiu(nom_arxiu, paraules_aleatoritzades)
+        escriure_log(f"Processat correctament: {nom_arxiu}")
     else:
-        escriure_log("Inici del programa sense fitxer d'entrada")
-        escriure_log("Final del programa sense fitxer d'entrada")
+        escriure_log(f"Error en processar: {nom_arxiu}")
+
+def main():
+    directori_entrada = "./entrada"
+    directori_sortida = "./sortida"
+    directori_log = "./log"
+
+    # Comprovar si els directoris de sortida i log existeixen, si no, crear-los
+    for directori in [directori_entrada, directori_sortida, directori_log]:
+        if not os.path.exists(directori):
+            os.makedirs(directori)
+
+    # Processar tots els arxius amb extensió .txt del directori d'entrada
+    arxius_entrada = [f for f in os.listdir(directori_entrada) if f.endswith(".txt")]
+    for arxiu in arxius_entrada:
+        nom_arxiu = os.path.join(directori_entrada, arxiu)
+        processar_arxiu(nom_arxiu)
 
 if __name__ == "__main__":
     main()
+
