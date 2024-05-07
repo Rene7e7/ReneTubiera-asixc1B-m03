@@ -1,38 +1,25 @@
-'''
-Aquesta versió haurà de processar tots els arxius, amb extensió txt del directori d'entrada.
-Haurà de generar un fitxer de sortida per a cada un dels que trobi a l’entrada amb el mateix nom, afegint “_boges”. I evidentment, processat ;-)
-Exemple: paraules.txt → paraules_boges.txt
-
-Directoris de treball
-Directori d’entrada: 		./entrada
-Directori de sortida: 		./sortida
-Directori de log: 		    ./log
-'''
 import random
+import time
+from log import escriure_log
 
-# Llista dels caracters especials
+# Lista de caracteres especiales
 LISTA =  [".", ",", ";", ":", "?", "!"]
 
-def llegir_arxiu():
+def llegir_arxiu(nom_arxiu):
     try:
-        with open("3_1Projecte/paraules.txt", "r") as f:
+        with open(nom_arxiu, "r") as f:
             oracio = f.readlines()
     except FileNotFoundError:
-        with open("boges.log", "a") as f:
-            f.write(f"Fitxer/Directory no trobat: paraules.txt\n")
-        print("Fitxer/Directory no trobat: paraules.txt")
+        escriure_log(f"Fitxer/Directory no trobat: {nom_arxiu}")
+        print(f"Fitxer/Directory no trobat: {nom_arxiu}")
         oracio = []
     return oracio
 
-def escriure_arxiu(llista):
-    with open("paraules_boges.txt", "w") as f:
+def escriure_arxiu(nom_arxiu, llista):
+    nom_sortida = nom_arxiu.replace("entrada", "sortida").replace(".txt", "_boges.txt")
+    with open(nom_sortida, "w") as f:
         for paraula in llista:
             f.write(paraula + "\n")
-
-
-def escriure_log(missatge):
-    with open("boges.log", "a") as f:
-        f.write(missatge + "\n")
 
 def dividir(oracio):
     paraules = []
@@ -85,18 +72,17 @@ def aleatoritzar_parte_mitjana(paraula):
 def juntar_llista(llista):
     return [paraula + "\n" for paraula in llista]
 
-def main():
-    oracio = llegir_arxiu()
+def processar_arxiu(nom_arxiu):
+    start_time = time.time()
+    oracio = llegir_arxiu(nom_arxiu)
     if oracio:
         paraules = dividir(oracio)
         paraules_desordenades = identificar_paraules(paraules)
         paraules_aleatoritzades = [aleatoritzar_parte_mitjana(paraula) if paraula in paraules_desordenades else paraula for paraula in paraules]
-        escriure_arxiu(paraules_aleatoritzades)
-        escriure_log("Inici del programa")
-        escriure_log("Final del programa")
+        escriure_arxiu(nom_arxiu, paraules_aleatoritzades)
+        escriure_log(f"Processat correctament: {nom_arxiu}")
     else:
-        escriure_log("Inici del programa sense fitxer d'entrada")
-        escriure_log("Final del programa sense fitxer d'entrada")
-
-if __name__ == "__main__":
-    main()
+        escriure_log(f"Error en processar: {nom_arxiu}")
+    elapsed_time = time.time() - start_time
+    escriure_log(f"Temps transcorregut en processar {nom_arxiu}: {elapsed_time} segons")
+    print(f"Temps transcorregut en processar {nom_arxiu}: {elapsed_time} segons")

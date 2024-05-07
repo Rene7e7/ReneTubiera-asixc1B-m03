@@ -1,40 +1,25 @@
-'''
-En aquest lliurament cal aprofitar tota la feina feta fins ara, és a dir el 1r i 2n lliurament i afegir el tractament de fitxers.
-Per tant, les dades caldrà agafar-les d’un arxiu d’entrada. I la sortida, que generi el programa caldrà escriure-la en un altre arxiu de sortida. L’aplicació NO ha de tenir menú, l’execució es “desatesa” i els resultats, o estan a arxius de sortida o als de log.
-Arxiu d’entrada: 	paraules.txt
-Arxiu de sortida: 	paraules_boges.txt
-Arxiu d’errors: 	boges.log
-
-boges.log servirà per mostrar tota informació, error… relacionat amb el funcionament del programa. És a dir, informarà de quan s’ha iniciat el programa i quan ha acabat, a part dels errors / problemes trobats o qualsevol altra dada que es considera important.
-
-Aquest arxiu log, no es podrà sobreescriure, haurà d’acumular un “històric” de tota la informació de les diferents execucions del programa
-
-'''
 import random
+import os
+from log import escriure_log
 
-# Llista dels caracters especials
+# Lista de caracteres especiales
 LISTA =  [".", ",", ";", ":", "?", "!"]
 
-def llegir_arxiu():
+def llegir_arxiu(nom_arxiu):
     try:
-        with open("paraules.txt", "r") as f:
+        with open(nom_arxiu, "r") as f:
             oracio = f.readlines()
     except FileNotFoundError:
-        with open("boges.log", "a") as f:
-            f.write(f"Fitxer/Directory no trobat: paraules.txt\n")
-        print("Fitxer/Directory no trobat: paraules.txt")
+        escriure_log(f"Fitxer/Directory no trobat: {nom_arxiu}")
+        print(f"Fitxer/Directory no trobat: {nom_arxiu}")
         oracio = []
     return oracio
 
-def escriure_arxiu(llista):
-    with open("paraules_boges.txt", "w") as f:
+def escriure_arxiu(nom_arxiu, llista):
+    nom_sortida = nom_arxiu.replace("entrada", "sortida").replace(".txt", "_boges.txt")
+    with open(nom_sortida, "w") as f:
         for paraula in llista:
             f.write(paraula + "\n")
-
-
-def escriure_log(missatge):
-    with open("boges.log", "a") as f:
-        f.write(missatge + "\n")
 
 def dividir(oracio):
     paraules = []
@@ -87,18 +72,13 @@ def aleatoritzar_parte_mitjana(paraula):
 def juntar_llista(llista):
     return [paraula + "\n" for paraula in llista]
 
-def main():
-    oracio = llegir_arxiu()
+def processar_arxiu(nom_arxiu):
+    oracio = llegir_arxiu(nom_arxiu)
     if oracio:
         paraules = dividir(oracio)
         paraules_desordenades = identificar_paraules(paraules)
         paraules_aleatoritzades = [aleatoritzar_parte_mitjana(paraula) if paraula in paraules_desordenades else paraula for paraula in paraules]
-        escriure_arxiu(paraules_aleatoritzades)
-        escriure_log("Inici del programa")
-        escriure_log("Final del programa")
+        escriure_arxiu(nom_arxiu, paraules_aleatoritzades)
+        escriure_log(f"Processat correctament: {nom_arxiu}")
     else:
-        escriure_log("Inici del programa sense fitxer d'entrada")
-        escriure_log("Final del programa sense fitxer d'entrada")
-
-if __name__ == "__main__":
-    main()
+        escriure_log(f"Error en processar: {nom_arxiu}")

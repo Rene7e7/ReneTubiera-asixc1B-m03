@@ -16,7 +16,7 @@ from datetime import datetime
 # paraules.txt lee el fitxero i paraules_boges genera el fitxero donde las palabras estan desordenadas (aleatorizar part medio)
 def llegir_arxiu():
     try:
-        with open("paraules.txt", "r") as f:
+        with open("3_1Projecte/paraules.txt", "r") as f:
             oracio = f.read()
     except FileNotFoundError:
         with open("boges.log", "w") as f:
