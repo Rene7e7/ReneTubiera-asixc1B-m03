@@ -20,6 +20,7 @@ def escriure_arxiu(nom_arxiu, llista):
     with open(nom_sortida, "w") as f:
         for paraula in llista:
             f.write(paraula + "\n")
+    print(f"Fitxer {nom_sortida} creat correctament")
 
 def dividir(oracio):
     paraules = []
@@ -30,7 +31,6 @@ def dividir(oracio):
 def identificar_paraules(paraules):
     paraules_desordenades = []
     for paraula in paraules:
-        # Comprova si te mes de 3 lletras per fer el randomitzador
         if len(paraula) > 3:
             paraules_desordenades.append(paraula)
     return paraules_desordenades
@@ -38,47 +38,61 @@ def identificar_paraules(paraules):
 def identificar_caracters_especials(paraula):
     caracters_especials = []
     for i, lletra in enumerate(paraula):
-        # Comanda isalnum son tots el caractes que no siguin caracters especials
         if not lletra.isalnum():
             caracters_especials.append((lletra, i))
     return caracters_especials
 
-def aleatoritzar_parte_mitjana(paraula):
-    caracters_especials = identificar_caracters_especials(paraula)
-    part_inicial = paraula[0]
-    part_final = paraula[-1]
-    medio = list(paraula[1:-1])
-    # Fa una neteja de quitant i guardan totes les posicions dels caracters especials
-    part_media = [char for char in medio if char.isalnum()]
-    if len(medio) > len(part_media):
-        ultima_part_media = part_media[-1]
-        part_media = part_media[:-1]
-        random.shuffle(part_media)
-        part_media.append(ultima_part_media)
-    else:
-        random.shuffle(part_media)
-    for character in paraula:
-        # Aqui fa una comprovacio de numeros amb caracters especials
-        if character.isdigit():
-            return part_inicial + "".join(medio) + part_final
-    for char, pos in caracters_especials:
-        part_media.insert(pos - 1, char)
-    if part_final in LISTA:
-        # Unio de les parts
-        return part_inicial + "".join(part_media)
-    else:
-        return part_inicial + "".join(part_media) + part_final
+def aleatoritzar_parte_mitjana(oracio):
+    paraules_desordenades = identificar_paraules(dividir(oracio))
+    paraules_ordenades = dividir(oracio)
+    paraules_aleatoritzades = []
+    for paraula in paraules_ordenades:
+        if paraula in paraules_desordenades:
+            caracters_especials = identificar_caracters_especials(paraula)
+            if caracters_especials:
+                for caracter in caracters_especials:
+                    paraula = paraula.replace(caracter[0], "")
+                paraula = list(paraula)
+                random.shuffle(paraula)
+                for caracter in caracters_especials:
+                    paraula.insert(caracter[1], caracter[0])
+                paraula = "".join(paraula)
+            else:
+                paraula = list(paraula)
+                random.shuffle(paraula)
+                paraula = "".join(paraula)
+        paraules_aleatoritzades.append(paraula)
+    return paraules_aleatoritzades
 
-def juntar_llista(llista):
-    return [paraula + "\n" for paraula in llista]
+def misma_posicion(oracio, paraules_aleatoritzades):
+    paraules_ordenades = dividir(oracio)
+    paraules_desordenades = identificar_paraules(paraules_ordenades)
+    paraules_ordenades = dividir(oracio)
+    for paraula in paraules_ordenades:
+        if paraula in paraules_desordenades:
+            paraules_desordenades.remove(paraula)
+            caracters_especials = identificar_caracters_especials(paraula)
+            if caracters_especials:
+                for caracter in caracters_especials:
+                    paraula = paraula.replace(caracter[0], "")
+                paraula = list(paraula)
+                random.shuffle(paraula)
+                for caracter in caracters_especials:
+                    paraula.insert(caracter[1], caracter[0])
+                paraula = "".join(paraula)
+            else:
+                paraula = list(paraula)
+                random.shuffle(paraula)
+                paraula = "".join(paraula)
+        paraules_aleatoritzades.append(paraula)
+    return paraules_aleatoritzades
 
 def processar_arxiu(nom_arxiu):
     oracio = llegir_arxiu(nom_arxiu)
     if oracio:
-        paraules = dividir(oracio)
-        paraules_desordenades = identificar_paraules(paraules)
-        paraules_aleatoritzades = [aleatoritzar_parte_mitjana(paraula) if paraula in paraules_desordenades else paraula for paraula in paraules]
+        paraules_aleatoritzades = aleatoritzar_parte_mitjana(oracio)
         escriure_arxiu(nom_arxiu, paraules_aleatoritzades)
-        escriure_log(f"Processat correctament: {nom_arxiu}")
     else:
-        escriure_log(f"Error en processar: {nom_arxiu}")
+        escriure_log(f"Error al llegir l'arxiu {nom_arxiu}")
+
+
