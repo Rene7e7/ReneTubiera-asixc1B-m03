@@ -1,0 +1,7 @@
+Según estudios realizados por la Universidad inglesa
+de Cambridge, no importa el orden en el que las letras
+estén escritas, la única cosa importante es que la primera
+y la última letra estén escritas en la posición correcta.
+El resto pueden estar totalmente desordenados y aún podrás leerlo
+sin problemas, porque no leemos cada letra en sí misma sino cada
+palabra entera.
