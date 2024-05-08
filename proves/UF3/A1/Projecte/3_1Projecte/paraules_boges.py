@@ -1,10 +1,12 @@
+# region Importacions
 import random
 import os
 from log import escriure_log
-
-# Llista dels caracters especials
+# endregion
+# region Llista dels caracters especials
 LISTA =  [".", ",", ";", ":", "?", "!"]
-
+# endregion
+# region llegir_arxiu
 def llegir_arxiu():
     oracio = []
     try:
@@ -15,17 +17,21 @@ def llegir_arxiu():
         escriure_log(f"Fitxer/Directory no trobat: paraules.txt")
         print("Fitxer/Directory no trobat: paraules.txt")
     return oracio
-
+# endregion
+# region escriure_arxiu
 def escriure_arxiu(llista):
     with open("paraules_boges.txt", "w") as f:
         for paraula in llista:
             f.write(paraula + "\n")
-
+# endregion
+# region dividir
 def dividir(oracio):
     paraules = []
     for linia in oracio:
         paraules += linia.split()
     return paraules
+# endregion
+# region identificar_paraules
 
 def identificar_paraules(paraules):
     paraules_desordenades = []
@@ -34,7 +40,8 @@ def identificar_paraules(paraules):
         if len(paraula) > 3:
             paraules_desordenades.append(paraula)
     return paraules_desordenades
-
+# endregion
+# region identificar_caracters_especials
 def identificar_caracters_especials(paraula):
     caracters_especials = []
     for i, lletra in enumerate(paraula):
@@ -42,7 +49,8 @@ def identificar_caracters_especials(paraula):
         if not lletra.isalnum():
             caracters_especials.append((lletra, i))
     return caracters_especials
-
+# endregion
+# region aleatoritzar_parte_mitjana
 def aleatoritzar_parte_mitjana(oracio):
     paraules_desordenades = identificar_paraules(dividir(oracio))
     paraules_ordenades = dividir(oracio)
@@ -79,3 +87,4 @@ def aleatoritzar_parte_mitjana(oracio):
             paraules_aleatoritzades.append(paraula)
 
     return paraules_aleatoritzades
+# endregion

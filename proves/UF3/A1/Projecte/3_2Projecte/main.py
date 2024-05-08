@@ -25,8 +25,4 @@ def main():
 
 
 if __name__ == "__main__":
-    start_time = time.time()
     main()
-    elapsed_time = time.time() - start_time
-    print(f"Temps total transcorregut: {elapsed_time:.3f} segons")
-    escriure_log(f"Temps total transcorregut: {elapsed_time:.3f} segons")

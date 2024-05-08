@@ -1,6 +1,9 @@
+# region Importacions
 from paraules_boges import llegir_arxiu, escriure_arxiu, aleatoritzar_parte_mitjana
 from log import escriure_log
 import time
+# endregion
+# region main
 def main():
     try:
         escriure_log("Inici del programa")
@@ -15,6 +18,8 @@ def main():
     except Exception as e:
         escriure_log(f"Error: {e}")
         print(f"Error: {e}")
+# endregion
+# region __main__
 
 if __name__ == "__main__":
     start_time = time.time()
@@ -22,3 +27,4 @@ if __name__ == "__main__":
     elapsed_time = time.time() - start_time
     print(f"Temps total transcorregut: {elapsed_time:.3f} segons")
     escriure_log(f"Temps total transcorregut: {elapsed_time:.3f} segons")
+# endregion
