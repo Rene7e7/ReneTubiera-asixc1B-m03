@@ -1,11 +1,12 @@
 import openai
+import requests
 
 def get_data_from_keyboard():
     oracion = input("Introduce una oración: ")
     return oracion
 def get_data_from_chatgpt():
     # Asigna tu API key
-    openai.api_key = "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"
+    openai.api_key = "sk-proj-cEVwDKd2xjY55H6vfLU8T3BlbkFJc8yC72zjetWbX1ZtQo8Z"
 
     # Define los parámetTros
     ENGINE = "gpt-3.5-turbo-instruct"

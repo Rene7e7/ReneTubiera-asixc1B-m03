@@ -1,4 +1,5 @@
-
+import openai
+import requests
 
 LISTA = ["palabra1", "palabra2", "palabra3", ...]
 
@@ -10,7 +11,7 @@ def get_data_from_keyboard():
 def get_data_from_chatgpt():
     """Obtiene datos de ChatGPT usando la API de OpenAI."""
     # Asigna tu API key
-    openai.api_key = "ug37mn6QegzJ8J3q0oBz3A==vESsyPdBHLLNWS6p"
+    openai.api_key = "sk-proj-cEVwDKd2xjY55H6vfLU8T3BlbkFJc8yC72zjetWbX1ZtQo8Z"
 
     # Define los parámetros
     ENGINE = "gpt-3.5-turbo-instruct"
