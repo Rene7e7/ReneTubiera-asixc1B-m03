@@ -38,9 +38,12 @@ def menu_cadenas():
             else:
                 print("La frase no és un palíndrom.")
         elif opcion == "2.3":
-            texto = input("Introdueix el text a xifrar: ")
-            clave = int(input("Introdueix la clau de xifratge (un nombre enter): "))
-            print("Text xifrat:", cifrado_cesar(texto, clave))
+            try:
+                texto = input("Introdueix el text a xifrar: ")
+                clave = int(input("Introdueix la clau de xifratge (un nombre enter): "))
+                print("Text xifrat:", cifrado_cesar(texto, clave))
+            except ValueError:
+                print("Error")
         elif opcion == "2.4":
             break
         else:
