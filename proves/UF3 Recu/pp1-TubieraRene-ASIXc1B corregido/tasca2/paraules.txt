@@ -1,36 +1,3 @@
-Google ClassroomClassroom
-ASIXc1B M03-Programació 23/2423/24
-Dades de la tasca
-Pp1: Prova Pràctica de 09:50 h a 11:40 h (CANVI D'HORARI)
-Javier Amaya
-•
-24 d’abr. (Darrera modificació: 10:02)
-10 punts
-Data de venciment: 11:40
-IMPORTANT: a la prova no es pot fer servir eines d'Intel·ligència Artificial (IA). Com per exemple: Copilot o ChatGTP
-Resultats d’Aprenentatge (RA):
-1  Escriu i prova programes senzills reconeixent i aplicant els fonaments de la programació modular Com es realitza la prova:
-
-    El codi ha d’estar comentat.
-    Les variables i constants han de tenir un nom significatiu.
-    El codi no ha de tenir errors
-    Cal implementar els exercicis amb descomposició funcional i modular
-
-Com es lliura la prova:
-
-    Cal generar un projecte amb el nom pp1-cognomNom-ASIXc1B
-    Cal generar un *.zip amb tot el projecte.
-    Cal lliurar els fitxers  *.py de cada exercici per separat i el fitxer *.zip.
-
-ASIXc1 M03 UF3 Pp1 - Rubrica.png
-Imatge
-paraules.txt
-Text
-El teu treball
-Assignat
-Comentaris privats
-Comentaris de la classe
-
 abporal
 abporals
 absorbat
@@ -1953,6 +1920,3 @@ zincorrodocrosita
 zincorrodocrosites
 zulú
 zulús
-
-paraules.txt
-paraules.txt s'està mostrant.
