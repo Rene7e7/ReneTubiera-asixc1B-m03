@@ -1,5 +1,6 @@
 def escribir_resultado(archivo_salida, resultado):
     try:
+        # Lo que fa es obrir el fitxer en mode escriptura
         with open(archivo_salida, 'w', encoding='utf-8') as archivo:
             archivo.write(f"El archivo contiene {resultado} dígitos.\n")
     except PermissionError:

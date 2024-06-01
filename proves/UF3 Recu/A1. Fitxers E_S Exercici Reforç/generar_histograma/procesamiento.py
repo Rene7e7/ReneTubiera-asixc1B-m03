@@ -4,9 +4,10 @@ def generar_histograma(contenido):
 
     notas = contenido.split()
     histograma = {'Excel·lent': 0, 'Notable': 0, 'Aprovat': 0, 'Suspès': 0}
-
+    # Iterar sobre las notas y contar cuántas hay de cada tipo
     for nota_str in notas:
         try:
+            # Reemplazar la coma por un punto para que Python pueda convertir la cadena a un número decimal
             nota = float(nota_str.replace(',', '.'))
             if nota == -1:
                 break

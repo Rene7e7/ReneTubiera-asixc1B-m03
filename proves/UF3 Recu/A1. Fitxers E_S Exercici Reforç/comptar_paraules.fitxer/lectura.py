@@ -1,6 +1,8 @@
 def llegir_arxiu(ruta):
     try:
+        # Lo que fa es obrir el fitxer en mode lectura
         with open(ruta, "r") as f:
+            # retorna una llista amb totes les línies del fitxer
             return f.readlines()
     except FileNotFoundError:
         print(f"Error: El archivo '{ruta}' no se encontró.")
