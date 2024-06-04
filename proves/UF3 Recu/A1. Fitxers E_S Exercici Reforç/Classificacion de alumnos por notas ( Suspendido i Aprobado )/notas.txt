@@ -1,0 +1,10 @@
+Juan, 7.5
+Maria, 4.3
+Carlos, 8.9
+Ana, 3.2
+Pedro, 5.0
+Rosa, 6.5
+Luis, 7.0
+Marta, 6.0
+Jorge, 5.5
+Rocio, 4.0

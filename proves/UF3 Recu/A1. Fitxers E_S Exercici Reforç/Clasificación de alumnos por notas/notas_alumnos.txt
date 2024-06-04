@@ -1,0 +1,15 @@
+Juan Perez, 4.5
+Maria Lopez, 7.0
+Luis Fernandez, 9.5
+Ana Torres, 5.0
+Pedro Ramirez, 3.0
+Elena Garcia, 6.0
+Sofia Martinez, 8.0
+Carlos Gomez, 10.0
+Juan Perez, 4.5
+Maria Lopez, 7.0
+Luis Fernandez, 9.5
+Ana Torres, 5.0
+Pedro Ramirez, 3.0
+Elena Garcia, 6.0
+Sofia Martinez, 8.0
