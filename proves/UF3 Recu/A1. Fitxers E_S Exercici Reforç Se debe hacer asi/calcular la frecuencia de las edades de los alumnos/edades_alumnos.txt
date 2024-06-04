@@ -1,0 +1,9 @@
+María;20
+Carlos;22
+Laura;19
+Pedro;21
+Ana;20
+Sofía;18
+Luis;23
+Elena;22
+David;21
