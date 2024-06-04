@@ -1,0 +1,4 @@
+Hola, este es un ejemplo de texto para contar vocales.
+Este texto contiene varias palabras y algunas de ellas tienen muchas vocales.
+Por ejemplo, la palabra murcielago tiene 5 vocales.
+Espero que este texto sea de ayuda para contar vocales.

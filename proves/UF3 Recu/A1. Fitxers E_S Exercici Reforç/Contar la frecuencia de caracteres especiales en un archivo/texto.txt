@@ -1,0 +1,4 @@
+Hola, este es un ejemplo de texto para contar caracteres especiales.
+Este texto contiene varias palabras, signos de puntuación y espacios!
+¿Podrás contar todos los caracteres especiales?
+¡Buena suerte!"""
