@@ -1,4 +1,5 @@
 def contar_vocales(palabra):
+    # Contar vocales de la palabra
     cantidad_vocales = sum(1 for letra in palabra if letra.lower() in 'aeiou')
     return cantidad_vocales
 

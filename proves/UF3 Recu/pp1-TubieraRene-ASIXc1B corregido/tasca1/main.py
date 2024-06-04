@@ -4,7 +4,9 @@ def main():
     archivo_entrada = "paraules.txt"  # Nombre del archivo de entrada
     longitudes_palabras = [2, 4, 6, 8, 10]  # Longitudes de palabras a buscar
 
+    # Contar palabras de cada longitud
     for longitud_palabra in longitudes_palabras:
+        # Contar palabras de longitud 'longitud_palabra'
         palabras_contador = pc.palabras(archivo_entrada, longitud_palabra)
         print(f"Se han encontrado {len(palabras_contador)} palabras de longitud {longitud_palabra}.")
 
