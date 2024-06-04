@@ -1,0 +1,104 @@
+Cámara;150.00
+Teléfono;350.00
+Laptop;900.00
+Tablet;200.00
+Reloj;50.00
+Impresora;180.00
+Altavoces;120.00
+Micrófono;80.00
+Teclado;60.00
+Mouse;25.00
+Monitor;300.00
+Disco duro externo;100.00
+Router;40.00
+Switch;70.00
+Escáner;200.00
+Proyector;500.00
+Calculadora;20.00
+Auriculares;30.00
+Mochila;45.00
+Estuche;15.00
+Libreta;5.00
+Pluma;1.00
+Borrador;0.50
+Carpeta;3.00
+Lápiz;0.75
+Cinta adhesiva;2.00
+Pegamento;1.50
+Tijeras;4.00
+Regla;1.25
+Papel;0.25
+Caja;6.00
+Folder;4.50
+Marcador;3.75
+Crayones;2.50
+Pincel;8.00
+Bolsa;7.50
+Almohadilla;10.00
+Memoria USB;12.00
+Baterías;9.00
+Adaptador;11.00
+Cable HDMI;14.00
+Soporte para teléfono;13.00
+Base para laptop;16.00
+Alfombrilla para mouse;17.00
+Funda para tablet;18.00
+Estuche para laptop;19.00
+Protector de pantalla;21.00
+Cubierta para teclado;22.00
+Cargador portátil;23.00
+Organizador de cables;24.00
+Alarma;26.00
+Luz LED;27.00
+Reloj despertador;28.00
+Termómetro;29.00
+Calendario;31.00
+Espejo;32.00
+Cesto de basura;33.00
+Esponja;34.00
+Paño de limpieza;35.00
+Guantes;36.00
+Funda para cámara;37.00
+Kit de herramientas;38.00
+Lupa;39.00
+Libro;41.00
+Revista;42.00
+Puzzle;43.00
+Juego de mesa;44.00
+Peluche;46.00
+Figura decorativa;47.00
+Florero;48.00
+Vela;49.00
+Candelabro;51.00
+Tapete;52.00
+Cojín;53.00
+Manta;54.00
+Cortina;55.00
+Toalla;56.00
+Perchero;57.00
+Paraguas;58.00
+Sombrero;59.00
+Gorro;61.00
+Bufanda;62.00
+Guantes de invierno;63.00
+Botas;64.00
+Zapatos;65.00
+Sandalias;66.00
+Zapatillas;67.00
+Pantuflas;68.00
+Calcetines;69.00
+Medias;71.00
+Leggings;72.00
+Pantalones;73.00
+Jeans;74.00
+Falda;75.00
+Vestido;76.00
+Camisa;77.00
+Blusa;78.00
+Sudadera;79.00
+Suéter;81.00
+Chaqueta;82.00
+Abrigo;83.00
+Bufanda de lana;84.00
+Gorro de lana;85.00
+Guantes de lana;86.00
