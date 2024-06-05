@@ -1,0 +1,21 @@
+Producto, Venta
+Producto A, 150.50
+Producto B, 200.25
+Producto C, 175.75
+Producto D, 100.00
+Producto E, 250.80
+Producto F, 300.00
+Producto G, 150.00
+Producto H, 200.00
+Producto I, 250.00
+Producto J, 300.00
+Producto K, 150.00
+Producto L, 200.00
+Producto M, 250.00
+Producto N, 300.00
+Producto O, 150.00
+Producto P, 200.00
+Producto Q, 250.00
+Producto R, 300.00
+Producto S, 150.00
+Producto T, 200.00

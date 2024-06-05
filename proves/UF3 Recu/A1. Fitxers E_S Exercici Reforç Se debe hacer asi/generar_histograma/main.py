@@ -3,7 +3,7 @@ from procesamiento import generar_histograma
 from escritura import escribir_histograma
 
 def main():
-    nombre_archivo = input("Introduce el nombre del archivo de notas: ")
+    nombre_archivo = "histograma.txt"
     contenido = leer_notas(nombre_archivo)
     histograma = generar_histograma(contenido)
 
