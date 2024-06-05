@@ -1,9 +1,7 @@
-def escribir_resultado(archivo_salida, resultado):
+def escribir_archivo(archivo_salida, contenido):
     try:
-        # Lo que fa es obrir el fitxer en mode escriptura
         with open(archivo_salida, 'w', encoding='utf-8') as archivo:
-            # recorre el diccionari i escriu en el fitxer
-            archivo.write(f"El archivo contiene {resultado} dígitos.\n")
+            archivo.write(contenido)
     except PermissionError:
         print(f"Error: No tienes permisos para escribir en '{archivo_salida}'.")
     except Exception as e:

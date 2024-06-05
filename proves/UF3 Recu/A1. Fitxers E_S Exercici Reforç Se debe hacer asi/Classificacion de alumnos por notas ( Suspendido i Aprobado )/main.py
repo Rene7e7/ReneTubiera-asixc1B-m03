@@ -8,4 +8,5 @@ if lista_notas is not None:
     aprobados, suspendidos = procesar_notas(lista_notas)
     # Cambia 'aprobados.txt' y 'suspendidos.txt' por los nombres de tus archivos de salida
     escribir_resultados('aprobados.txt', aprobados, 'Aprobado')
+    # Cambia 'aprobados.txt' y 'suspendidos.txt' por los nombres de tus archivos de salida
     escribir_resultados('suspendidos.txt', suspendidos, 'Suspendido')

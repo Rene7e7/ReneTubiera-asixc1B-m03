@@ -8,6 +8,7 @@ def main():
     # Leer el contenido del archivo
     contenido = leer_archivo(archivo_entrada)
 
+    # Si el contenido no es None (es decir, si se ha podido leer el archivo)
     if contenido is not None:
         # Clasificar a los alumnos por sus notas
         clasificaciones = clasificar_alumnos(contenido)
