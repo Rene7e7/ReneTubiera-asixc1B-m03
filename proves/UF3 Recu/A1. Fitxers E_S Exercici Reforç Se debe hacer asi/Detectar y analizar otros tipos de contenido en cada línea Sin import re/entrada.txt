@@ -1,0 +1,24 @@
+Hola, aquest és un fitxer de prova.
+12345
+Aquest fitxer conté diverses línies.
+!@#$%^&*()
+També conté números com 67890 i caràcters especials.
+abcdefghijk
+Línia 7 amb text i números: 987654
+<>?:"{}|_+
+Prova de paraules i més paraules.
+Altres caràcters especials: `~[];',./
+Més números 54321 i text.
+ZXCVBNM
+Una línia amb tot: 123abc!@#
+Nova línia amb números 111222
+TEXT AMB MAJÚSCULES
+Una altra línia, 333444555, més caràcters.
+Llarga línia amb molt de text, text i més text.
+Prova final de caràcters especials: ()_+{}|:"<>
+Línia d'exemple amb 888999
+Altres caràcters especials més complexos: §±!@#$%^&*()
+Final de l'arxiu amb text, números 000111 i caràcters.
+05/06/2021
+09:00
+hola@gmail.com
