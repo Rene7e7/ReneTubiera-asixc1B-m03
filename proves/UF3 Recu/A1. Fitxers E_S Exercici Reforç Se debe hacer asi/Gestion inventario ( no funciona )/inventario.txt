@@ -1,0 +1,10 @@
+producto1,10
+producto2,20
+producto3,15
+producto4,30
+producto5,25
+producto6,12
+producto7,18
+producto8,22
+producto9,17
+producto10,28
