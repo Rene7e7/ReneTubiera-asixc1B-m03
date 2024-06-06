@@ -16,7 +16,7 @@ def filtrar_palabras(lineas):
             # Eliminar caracteres especiales de la palabra
             palabra_limpia = ''.join(caracter for caracter in palabra if caracter not in caracteres_especiales)
             # Se comprueba si la palabra termina en 'ción'
-            if palabra_limpia.endswith('ción'):
+            if palabra_limpia.endswith('al'):
                 # Si termina en 'ción' se añade a la lista de palabras_terminacion
                 palabras_terminacion.append(palabra_limpia)
             else:

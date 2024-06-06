@@ -2,7 +2,7 @@ import procesar_archivo
 
 def main():
     # Nombre del archivo de entrada
-    archivo_entrada = 'texto.txt'
+    archivo_entrada = 'paraules.txt'
     # Nombre del archivo para palabras que terminan en 'ción'
     archivo_terminaciones = 'terminaciones.txt'
     # Nombre del archivo para otras palabras
